@@ -14,6 +14,11 @@ app.use(express.static('../client/dist'));
 app.use('/', express.static('../client/dist/index.html'));
 app.use('/admin', express.static('../client/dist/index.html'));
 
+app.use(function(req, res, next) {
+    console.log(`[${new Date()}] ${req.method} ${req.path} ${JSON.stringify(req.body)}`);
+    next();
+});
+
 app.post('/teams/create', (req, res) => res.send(
   controller.createTeam(req.body.teamName, req.body.duration)
 ));
