@@ -48,6 +48,10 @@ app.get('/sev-artworks/list', (_, res) => res.send(
   controller.listSevArtworks()
 ));
 
+app.post('/slack', (req, res) => res.send(
+  req.body.challenge
+))
+
 app.listen(PORT, HOST, () => console.log(`Dropscape 3.0 app listening on ${HOST}:${PORT}!`));
 
 import {decoyAccounts} from './slack-accounts';
