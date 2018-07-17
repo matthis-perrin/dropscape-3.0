@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "lib": ["es2015", "dom"],
+    "jsx": "react",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "noEmit": true,
+    "paths": {
+      "*": ["*", "node_modules/*"]
+    },
+    "strictNullChecks": true,
+    "pretty": true,
+    "experimentalDecorators": true,
+    "target": "ES2017"
+  }
+}

@@ -1,0 +1,164 @@
+@baseSize: 256px;
+@borderColor: #000;
+@borderWidth: 0;
+@margin: 32px;
+@shadowColorIn: #fff;
+@shadowColorOut: #ddd;
+
+.sev-artwork-wrapper {
+  border-color: @borderColor;
+  border-style: solid;
+  overflow: hidden;
+  background-color: @shadowColorIn;
+  .sev-artwork {
+    width: @baseSize;
+    height: @baseSize;
+  }
+}
+
+.scaleArtworkWrapper(@scale) {
+  display: inline-block;
+  width: (@baseSize + 2 * (@borderWidth + @margin)) * @scale;
+  height: (@baseSize + 2 * (@borderWidth + @margin)) * @scale;
+  border-radius: (@baseSize + 2 * (@borderWidth + @margin)) * @scale / 2;
+  border-width: @borderWidth * @scale;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 (@baseSize / 2 * @scale) (@baseSize / 8 * @scale) @shadowColorOut;
+  .sev-artwork {
+    transform: scale(@scale);
+    transform-origin: 0 0;
+    margin: @margin * @scale;
+  }
+}
+
+.sev-artwork-wrapper--large {
+  .scaleArtworkWrapper(1);
+}
+.sev-artwork-wrapper--medium {
+  .scaleArtworkWrapper(0.4);
+}
+.sev-artwork-wrapper--small {
+  .scaleArtworkWrapper(0.2);
+}
+.sev-artwork-wrapper--x-small {
+  .scaleArtworkWrapper(0.15);
+}
+.sev-artwork-wrapper--xx-small {
+  .scaleArtworkWrapper(0.1);
+}
+
+
+.bg-Adaptable_Shrimp {
+    background: url('sev-artworks-sprite.png') -352px -32px;
+}
+.bg-Blistering_Dunlin {
+    background: url('sev-artworks-sprite.png') -1312px -992px;
+}
+.bg-Corpulent_Snorlax {
+    background: url('sev-artworks-sprite.png') -32px -352px;
+}
+.bg-Creative_Eagle {
+    background: url('sev-artworks-sprite.png') -352px -352px;
+}
+.bg-Communicative_Gerbil {
+    background: url('sev-artworks-sprite.png') -672px -32px;
+}
+.bg-Challenging_Tiger {
+    background: url('sev-artworks-sprite.png') -672px -352px;
+}
+.bg-Courteous_Spider {
+    background: url('sev-artworks-sprite.png') -32px -672px;
+}
+.bg-Decisive_Goose {
+    background: url('sev-artworks-sprite.png') -352px -672px;
+}
+.bg-Lachrymose_Camel {
+    background: url('sev-artworks-sprite.png') -672px -672px;
+}
+.bg-Meandering_Elk {
+    background: url('sev-artworks-sprite.png') -992px -32px;
+}
+.bg-Delighted_Duck {
+    background: url('sev-artworks-sprite.png') -992px -352px;
+}
+.bg-Charming_Bat {
+    background: url('sev-artworks-sprite.png') -992px -672px;
+}
+.bg-Agreeable_Rhinoceros {
+    background: url('sev-artworks-sprite.png') -32px -992px;
+}
+.bg-Delinquent_Seahorse {
+    background: url('sev-artworks-sprite.png') -352px -992px;
+}
+.bg-Impartial_Butterfly {
+    background: url('sev-artworks-sprite.png') -672px -992px;
+}
+.bg-Entertaining_Beaver {
+    background: url('sev-artworks-sprite.png') -992px -992px;
+}
+.bg-Happy_Hare {
+    background: url('sev-artworks-sprite.png') -1312px -32px;
+}
+.bg-Determinde_Shark {
+    background: url('sev-artworks-sprite.png') -1312px -352px;
+}
+.bg-Modest_Goat {
+    background: url('sev-artworks-sprite.png') -1312px -672px;
+}
+.bg-Joyful_Camel {
+    background: url('sev-artworks-sprite.png') -32px -32px;
+}
+.bg-Neat_Cod {
+    background: url('sev-artworks-sprite.png') -32px -1312px;
+}
+.bg-Polite_Salamander {
+    background: url('sev-artworks-sprite.png') -352px -1312px;
+}
+.bg-Nefarious_Seadragon {
+    background: url('sev-artworks-sprite.png') -672px -1312px;
+}
+.bg-Relaxed_Porcupine {
+    background: url('sev-artworks-sprite.png') -992px -1312px;
+}
+.bg-Rambunctious_Wallaby {
+    background: url('sev-artworks-sprite.png') -1312px -1312px;
+}
+.bg-Sensible_Caterpillar {
+    background: url('sev-artworks-sprite.png') -1632px -32px;
+}
+.bg-Creeping_Wolverine {
+    background: url('sev-artworks-sprite.png') -1632px -352px;
+}
+.bg-Severe_Tiger {
+    background: url('sev-artworks-sprite.png') -1632px -672px;
+}
+.bg-Cowardly_Buffalo {
+    background: url('sev-artworks-sprite.png') -1632px -992px;
+}
+.bg-Slick_Loris {
+    background: url('sev-artworks-sprite.png') -1632px -1312px;
+}
+.bg-Soaring_Corgi {
+    background: url('sev-artworks-sprite.png') -32px -1632px;
+}
+.bg-Shy_Lobster {
+    background: url('sev-artworks-sprite.png') -352px -1632px;
+}
+.bg-Smelly_Wren {
+    background: url('sev-artworks-sprite.png') -672px -1632px;
+}
+.bg-Sparkling_Emu {
+    background: url('sev-artworks-sprite.png') -992px -1632px;
+}
+.bg-Thrifty_Raccoon {
+    background: url('sev-artworks-sprite.png') -1312px -1632px;
+}
+.bg-Mysterious_Wombat {
+    background: url('sev-artworks-sprite.png') -1632px -1632px;
+}
+.bg-Romantic_Hedgehog {
+    background: url('sev-artworks-sprite.png') -1952px -32px;
+}
+.bg-Selfish_Hedgehog {
+    background: url('sev-artworks-sprite.png') -1952px -352px;
+}

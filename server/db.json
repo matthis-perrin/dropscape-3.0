@@ -1,0 +1,14 @@
+{
+    "teams": [
+        {
+            "id": 3157386030,
+            "name": "Agreeable_Rhinoceros",
+            "creationTime": 1531791696412,
+            "deleted": false,
+            "pauses": [],
+            "duration": 2700000,
+            "videoStatus": "not-played",
+            "isPresenting": true
+        }
+    ]
+}
