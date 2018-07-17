@@ -2,6 +2,16 @@ export interface SlackAccount {
   name: string;
   label: string;
   email: string;
+  apiToken: string;
+}
+
+export interface SlackUser {
+  id: string;
+  name: string;
+  realName: string;
+  displayName: string;
+  email: string;
+  imId: string;
 }
 
 export enum VideoStatus {

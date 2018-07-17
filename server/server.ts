@@ -1,7 +1,7 @@
 import * as express from 'express';
 import * as controller from './controller';
 
-const PORT = 80;
+const PORT = 3000;
 const HOST = '0.0.0.0';
 
 
@@ -53,11 +53,73 @@ app.get('/sev-artworks/list', (_, res) => res.send(
   controller.listSevArtworks()
 ));
 
-app.post('/slack', (req, res) => res.send(
-  req.body.challenge
-))
+app.post('/slack', (req, res) => {
+  if (req.body.challenge) {
+    res.send(req.body.challenge)
+  }
+  if (req.body.event && req.body.event.type === 'message') {
+    controller.handleSlackMessage(req.body.event.user, req.body.event.text, req.body.event.channel);
+  }
+  res.send();
+})
+
+app.post('/slack/oauth', (req, res) => res.send())
 
 app.listen(PORT, HOST, () => console.log(`Dropscape 3.0 app listening on ${HOST}:${PORT}!`));
 
-import {decoyAccounts} from './slack-accounts';
-console.log(decoyAccounts);
+// import {adminAccount, puzzleAccounts} from './slack-accounts';
+// import * as Slack from './slack';
+
+// function loadUsers(users: string[], callback: () => void): void {
+//   if (users.length === 0) {
+//     callback();
+//   }
+//   const user = puzzleAccounts[users[0]];
+//   Slack.fetchAccessToken(user, (token) => {
+//     user.apiToken = token;
+//     loadUsers(users.slice(1), callback)
+//   });
+// }
+
+// rusty,mink { ok: true,
+//   access_token:
+//    'xoxp-399994521443-401361256839-399629906512-ff7bdfce4d0e7aad3357aaddfaf91db1',
+//   scope: 'identify,im:history,im:read',
+//   user_id: 'UBTAM7JQP',
+//   team_name: 'Dropscape 3.0',
+//   team_id: 'TBRV8FBD1' }
+// swamp,corgi { ok: true,
+//   access_token:
+//    'xoxp-399994521443-400081912932-399629145392-04779bb12262cf4e34d9fb3210cc5620',
+//   scope: 'identify,im:history,im:read',
+//   user_id: 'UBS2DSUTE',
+//   team_name: 'Dropscape 3.0',
+//   team_id: 'TBRV8FBD1' }
+// bad,raccoon { ok: true,
+//   access_token:
+//    'xoxp-399994521443-401163813303-400122084003-a68c32457d8073d450ef2bf3cb398229',
+//   scope:
+//    'identify,incoming-webhook,im:history,im:read,chat:write:user',
+//   user_id: 'UBT4TPX8X',
+//   team_name: 'Dropscape 3.0',
+//   team_id: 'TBRV8FBD1' }
+// whistling,hummingbird { ok: true,
+//   access_token:
+//    'xoxp-399994521443-401361473559-401665134486-6ebbc9a5270bc5660b9e02ed6b2a60cd',
+//   scope: 'identify,im:history,im:read,chat:write:user',
+//   user_id: 'UBTAMDXGF',
+//   team_name: 'Dropscape 3.0',
+//   team_id: 'TBRV8FBD1' }
+
+//https://dropscape3.slack.com/?redir=%2Foauth%3Fclient_id%3D399994521443.399534455952%26redirect_uri%3Dhttp%3A%2F%2F18.222.203.244%2Fslack%2Foauth%26scope%3Dim%253Aread%252Cim%253Ahistory%252Cchat%253Awrite%253Auser%252Cim%253Awrite
+
+// Slack.fetchAccessToken(puzzleAccounts.SwampCorgi)
+// Slack.fetchAccessToken(puzzleAccounts.RustyMink)
+// Slack.fetchAccessToken(puzzleAccounts.WhistlingHummingbird)
+// Slack.fetchAccessToken(adminAccount)
+
+// Slack.listUsers(users => {
+//   const WhistlingHummingbirdUser = users.filter(u => u.email === puzzleAccounts.WhistlingHummingbird.email)[0];
+//   const RustyMinkAccount = puzzleAccounts.RustyMink;
+//   Slack.sendMessage('Hi Whistling Hummingbird, this is Rusty Mink :)', RustyMinkAccount, WhistlingHummingbirdUser);
+// });
