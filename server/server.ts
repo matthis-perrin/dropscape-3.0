@@ -1,7 +1,8 @@
 import * as express from 'express';
 import * as controller from './controller';
 
-const PORT = 3000;
+const PORT = 80;
+const HOST = '0.0.0.0';
 
 
 const app = express();
@@ -47,7 +48,7 @@ app.get('/sev-artworks/list', (_, res) => res.send(
   controller.listSevArtworks()
 ));
 
-app.listen(PORT, () => console.log(`Dropscape 3.0 app listening on port ${PORT}!`));
+app.listen(PORT, HOST, () => console.log(`Dropscape 3.0 app listening on ${HOST}:${PORT}!`));
 
 import {decoyAccounts} from './slack-accounts';
 console.log(decoyAccounts);
