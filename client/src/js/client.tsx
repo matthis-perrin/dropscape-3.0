@@ -52,7 +52,13 @@ export default class Client extends React.Component<ClientProps, ClientState> {
     }
     return (
       <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: '#30363C',
+        width: '100%',
+        height: '100%',
+        position: 'fixed',
       }}>
         <ClientContent team={team} artwork={sevArtwork} />
       </div>

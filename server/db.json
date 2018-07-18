@@ -1,12 +1,13 @@
 {
     "teams": [
         {
-            "id": 3157386030,
-            "name": "Agreeable_Rhinoceros",
-            "creationTime": 1531791696412,
-            "deleted": false,
+            "id": 8122286080,
+            "name": "Adaptable_Shrimp",
+            "creationTime": 1531897499406,
+            "startTime": 1531897503082,
+            "deleted": true,
             "pauses": [],
-            "duration": 2700000,
+            "duration": 60000,
             "videoStatus": "not-played",
             "isPresenting": true
         }

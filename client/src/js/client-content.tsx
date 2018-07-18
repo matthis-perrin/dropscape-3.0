@@ -79,26 +79,41 @@ export default class ClientContent extends React.Component<ClientContentProps, C
     const artwork = this.props.artwork;
 
     return (
-      <React.Fragment>
-        <SevArtwork sevArtwork={artwork} size={SevArtworkSize.Medium} />
-        <Typography style={{color: 'rgba(255, 255, 255, 0.4)'}} variant="display2">{`Team ${artwork.label}`}</Typography>
-        <Typography style={{color: 'rgba(255, 255, 255, 0.8)'}} variant="display4"><TimerCountdown team={team} /></Typography>
-        <video
-          width={800}
-          preload="auto"
-          src="win-video.mp4"
-          ref={v => {
-            this.video = v;
-            if (this.video) {
-              this.video.onended = this.handleVideoEnded;
-            }
-          }}
-          style={{
-            opacity: this.state.isPlaying ? 1 : 0,
-            transition: 'opacity ease-in 600ms'
-          }}
-        />
-      </React.Fragment>
+      <div>
+        <div style={{
+          position: 'fixed',
+          top: 16,
+          right: 16,
+          display: 'flex',
+          alignItems: 'center',
+          opacity: 0.5,
+        }}>
+          <SevArtwork sevArtwork={artwork} size={SevArtworkSize.Small} />
+          <Typography variant="display1" style={{
+            color: 'rgba(255, 255, 255, 0.8)',
+            margin: '0 16px',
+          }}>{`Team ${artwork.label}`}</Typography>
+        </div>
+        <Typography variant="display4" style={{color: 'rgba(255, 255, 255, 0.8)', fontSize: '17rem'}}>
+          <TimerCountdown team={team} />
+        </Typography>
+      </div>
     );
   }
 }
+
+{/* <video
+  width={800}
+  preload="auto"
+  src="win-video.mp4"
+  ref={v => {
+    this.video = v;
+    if (this.video) {
+      this.video.onended = this.handleVideoEnded;
+    }
+  }}
+  style={{
+    opacity: this.state.isPlaying ? 1 : 0,
+    transition: 'opacity ease-in 600ms'
+  }}
+/> */}

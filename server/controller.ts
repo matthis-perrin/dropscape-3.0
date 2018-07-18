@@ -137,30 +137,81 @@ export function listSevArtworks(): SevArtwork[] {
     {name: 'Creeping_Wolverine', label: 'Creeping Wolverine'},
     {name: 'Decisive_Goose', label: 'Decisive Goose'},
     {name: 'Delighted_Duck', label: 'Delighted Duck'},
-    {name: 'Delinquent_Seahorse', label: 'Delinquent Seahorse'},
-    {name: 'Determinde_Shark', label: 'Determinde Shark'},
-    {name: 'Entertaining_Beaver', label: 'Entertaining Beaver'},
-    {name: 'Happy_Hare', label: 'Happy Hare'},
-    {name: 'Impartial_Butterfly', label: 'Impartial Butterfly'},
-    {name: 'Joyful_Camel', label: 'Joyful Camel'},
-    {name: 'Lachrymose_Camel', label: 'Lachrymose Camel'},
-    {name: 'Meandering_Elk', label: 'Meandering Elk'},
-    {name: 'Modest_Goat', label: 'Modest Goat'},
-    {name: 'Mysterious_Wombat', label: 'Mysterious Wombat'},
-    {name: 'Neat_Cod', label: 'Neat Cod'},
-    {name: 'Nefarious_Seadragon', label: 'Nefarious Seadragon'},
-    {name: 'Polite_Salamander', label: 'Polite Salamander'},
-    {name: 'Rambunctious_Wallaby', label: 'Rambunctious Wallaby'},
-    {name: 'Relaxed_Porcupine', label: 'Relaxed Porcupine'},
-    {name: 'Romantic_Hedgehog', label: 'Romantic Hedgehog'},
-    {name: 'Selfish_Hedgehog', label: 'Selfish Hedgehog'},
-    {name: 'Sensible_Caterpillar', label: 'Sensible Caterpillar'},
-    {name: 'Severe_Tiger', label: 'Severe Tiger'},
-    {name: 'Shy_Lobster', label: 'Shy Lobster'},
-    {name: 'Slick_Loris', label: 'Slick Loris'},
-    {name: 'Smelly_Wren', label: 'Smelly Wren'},
-    {name: 'Soaring_Corgi', label: 'Soaring Corgi'},
-    {name: 'Sparkling_Emu', label: 'Sparkling Emu'},
-    {name: 'Thrifty_Raccoon', label: 'Thrifty Raccoon'},
+    {name: 'Ancient_Tamarin', label: 'Ancient Tamarin'},
+    {name: 'Caustic_Goldfish', label: 'Caustic Goldfish'},
+    {name: 'Cruel_Stork', label: 'Cruel Stork'},
+    {name: 'Fearless_Pig', label: 'Fearless Pig'},
+    {name: 'Gorgeous_Firefly', label: 'Gorgeous Firefly'},
+    {name: 'Greedy_Beaver', label: 'Greedy Beaver'},
+    {name: 'Hopeful_Emu', label: 'Hopeful Emu'},
+    {name: 'Invincible_Tarsier', label: 'Invincible Tarsier'},
+    {name: 'Jocular_Pony', label: 'Jocular Pony'},
+    {name: 'Monstrous_Ram', label: 'Monstrous Ram'},
+    {name: 'Oornery_Aardvark', label: 'Oornery Aardvark'},
+    {name: 'Oppressive_Wallaroo', label: 'Oppressive Wallaroo'},
+    {name: 'Phantasmal_Spider', label: 'Phantasmal Spider'},
+    {name: 'Puckish_Lobster', label: 'Puckish Lobster'},
+    {name: 'Punctilious_Seamonkey', label: 'Punctilious Seamonkey'},
+    {name: 'Quick_Beagle', label: 'Quick Beagle'},
+    {name: 'Rapid_Asp', label: 'Rapid Asp'},
+    {name: 'Repulsive_Turtle', label: 'Repulsive Turtle'},
+    {name: 'Revolting_Seahorse', label: 'Revolting Seahorse'},
+    {name: 'Slimy_Elk', label: 'Slimy Elk'},
+    {name: 'Sparkling_Clam', label: 'Sparkling Clam'},
+    {name: 'Starbellied_Ostrich', label: 'Starbellied Ostrich'},
+    {name: 'Timid_Ape', label: 'Timid Ape'},
+    {name: 'Verdant_Tuna', label: 'Verdant Tuna'},
+    {name: 'Witty_Oryx', label: 'Witty Oryx'},
+    // {name: 'Delinquent_Seahorse', label: 'Delinquent Seahorse'},
+    // {name: 'Determinde_Shark', label: 'Determinde Shark'},
+    // {name: 'Entertaining_Beaver', label: 'Entertaining Beaver'},
+    // {name: 'Happy_Hare', label: 'Happy Hare'},
+    // {name: 'Impartial_Butterfly', label: 'Impartial Butterfly'},
+    // {name: 'Joyful_Camel', label: 'Joyful Camel'},
+    // {name: 'Lachrymose_Camel', label: 'Lachrymose Camel'},
+    // {name: 'Meandering_Elk', label: 'Meandering Elk'},
+    // {name: 'Modest_Goat', label: 'Modest Goat'},
+    // {name: 'Mysterious_Wombat', label: 'Mysterious Wombat'},
+    // {name: 'Neat_Cod', label: 'Neat Cod'},
+    // {name: 'Nefarious_Seadragon', label: 'Nefarious Seadragon'},
+    // {name: 'Polite_Salamander', label: 'Polite Salamander'},
+    // {name: 'Rambunctious_Wallaby', label: 'Rambunctious Wallaby'},
+    // {name: 'Relaxed_Porcupine', label: 'Relaxed Porcupine'},
+    // {name: 'Romantic_Hedgehog', label: 'Romantic Hedgehog'},
+    // {name: 'Selfish_Hedgehog', label: 'Selfish Hedgehog'},
+    // {name: 'Sensible_Caterpillar', label: 'Sensible Caterpillar'},
+    // {name: 'Severe_Tiger', label: 'Severe Tiger'},
+    // {name: 'Shy_Lobster', label: 'Shy Lobster'},
+    // {name: 'Slick_Loris', label: 'Slick Loris'},
+    // {name: 'Smelly_Wren', label: 'Smelly Wren'},
+    // {name: 'Soaring_Corgi', label: 'Soaring Corgi'},
+    // {name: 'Sparkling_Emu', label: 'Sparkling Emu'},
+    // {name: 'Thrifty_Raccoon', label: 'Thrifty Raccoon'},
   ];
 }
+
+// Ancient Tamarin
+// Caustic Goldfish
+// Cruel Stork
+// Fearless Pig
+// Gorgeous Firefly
+// Greedy Beaver
+// Hopeful Emu
+// Invincible Tarsier
+// Jocular Pony
+// Monstrous Ram
+// Oornery Aardvark
+// Oppressive Wallaroo
+// Phantasmal Spider
+// Puckish Lobster
+// Punctilious Seamonkey
+// Quick Beagle
+// Rapid Asp
+// Repulsive Turtle
+// Revolting Seahorse
+// Slimy Elk
+// Sparkling Clam
+// Starbellied Ostrich
+// Timid Ape
+// Verdant Tuna
+// Witty Oryx
