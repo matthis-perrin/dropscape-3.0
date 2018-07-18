@@ -36,7 +36,7 @@ export function channelInfo(channelId: string, callback: (data: any) => void): v
   });
 }
 
-export function userInfo(userId: string, callback: (data: any) => void): void {
+export function userInfo(userId: string, callback: (data: SlackUser) => void): void {
   apiCall('users.list', {token: TOKEN}, usersList => {
     callback(usersList['members'].filter(u => u.id === userId)[0]);
   });

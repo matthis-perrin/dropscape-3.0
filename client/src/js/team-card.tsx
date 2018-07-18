@@ -86,7 +86,7 @@ export default class TeamCard extends React.Component<Props, State> {
           margin: '0 8px 0 16px',
         }}>
           <Typography variant="headline" style={{fontSize: 19}}>
-            {artwork.label}
+            {artwork && artwork.label}
           </Typography>
           <TeamStatus team={team} />
         </div>

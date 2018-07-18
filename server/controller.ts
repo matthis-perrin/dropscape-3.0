@@ -1,5 +1,5 @@
 import {teams} from './lib';
-import {SevArtwork, Team, VideoStatus} from './models';
+import {SevArtwork, Team, VideoStatus, SlackUser} from './models';
 import * as Slack from './slack';
 
 export function createTeam(teamName: string, duration: number): void {
@@ -108,8 +108,13 @@ export function listTeams(): Team[] {
 
 export function handleSlackMessage(userId: string, text: string, channel: string): void {
   console.log(userId, text, channel)
-  Slack.userInfo(userId, (data) => {
-    console.log(data);
+  Slack.userInfo(userId, (user: SlackUser) => {
+    if (user && user.realName) {
+      const isTeam = listSevArtworks().filter(a => a.label === user.realName)[0] !== undefined;
+      if (isTeam) {
+        
+      }
+    }
   })
 }
 
