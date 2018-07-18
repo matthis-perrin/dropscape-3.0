@@ -31,3 +31,9 @@ export const puzzleAccounts = {
   RustyMink: makeAccountFromName(['rusty-mink', 'xoxp-399994521443-401361256839-400200691236-ed5cca2be79b4e64c9514433355d3629']),
   WhistlingHummingbird: makeAccountFromName(['whistling-hummingbird', 'xoxp-399994521443-401361473559-400445247250-a79e43fe92a67570a7c8e3316292a458']),
 };
+
+export const puzzleHints = {
+  'Swamp Corgi': 'Did you leave something in the Tardis?',
+  'Rusty Mink' : 'Hi! During the IPO Party, I discovered that they have one-way mirrors in the rooms in Deep Focus. Try turning off the lights and check it out!',
+  'Whistling Hummingbird': 'Hey! I think Ajay’s admin left a voicemail for you. Have you heard it?',
+}

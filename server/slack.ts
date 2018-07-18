@@ -91,12 +91,10 @@ export function fetchAccessToken(account: SlackAccount): void {
   })
 }
 
-export function sendMessage(text: string, fromAccount: SlackAccount, toUser: SlackUser): void {
-  console.log(fromAccount)
-  console.log(toUser)
+export function sendMessage(text: string, fromAccount: SlackAccount, toUserId: string): void {
   apiCall('im.open', {
     token: fromAccount.apiToken,
-    user: toUser.id,
+    user: toUserId,
   }, (res) => {
     const channelId = res.channel.id;
     apiCall('chat.postMessage', {

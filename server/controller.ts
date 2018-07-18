@@ -1,6 +1,7 @@
 import {teams} from './lib';
 import {SevArtwork, Team, VideoStatus, SlackUser} from './models';
 import * as Slack from './slack';
+import { adminAccount, puzzleAccounts, puzzleHints } from './slack-accounts';
 
 export function createTeam(teamName: string, duration: number): void {
   const team: Team = {
@@ -107,18 +108,17 @@ export function listTeams(): Team[] {
 }
 
 export function handleSlackMessage(userId: string, text: string, authedUsers: string[]): void {
-  console.log(userId, text)
   Slack.allUserNameById(users => {
     const senderRealName = users[userId];
     const receiverId = authedUsers.filter(u => u !== userId)[0]
     const receiverRealName = receiverId && users[receiverId];
     if (senderRealName && receiverRealName) {
-      const isTeam = listSevArtworks().filter(a => a.label === senderRealName)[0] !== undefined;
-      if (isTeam) {
-        console.log('Yay')
+      const isTeam = senderRealName === adminAccount.name || listSevArtworks().filter(a => a.label === senderRealName)[0] !== undefined;
+      const isPuzzleBot = Object.keys(puzzleAccounts).map(k => puzzleAccounts[k]).filter(a => a.label === receiverRealName)[0] !== undefined
+      if (isTeam && isPuzzleBot) {
+        Slack.sendMessage(puzzleHints[receiverRealName], puzzleAccounts[receiverRealName], userId);
       }
     }
-    console.log(senderRealName, receiverRealName)
   });
 }
 
