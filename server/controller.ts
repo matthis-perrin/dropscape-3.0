@@ -106,19 +106,20 @@ export function listTeams(): Team[] {
   return teams.fetch();
 }
 
-export function handleSlackMessage(userId: string, text: string, channel: string): void {
-  console.log(userId, text, channel)
-  Slack.userInfo(userId, (user: SlackUser) => {
-    if (user && user.realName) {
-      const isTeam = listSevArtworks().filter(a => a.label === user.realName)[0] !== undefined;
+export function handleSlackMessage(userId: string, text: string, authedUsers: string[]): void {
+  console.log(userId, text)
+  Slack.allUserNameById(users => {
+    const senderRealName = users[userId];
+    const receiverId = authedUsers.filter(u => u !== userId)[0]
+    const receiverRealName = receiverId && users[receiverId];
+    if (senderRealName && receiverRealName) {
+      const isTeam = listSevArtworks().filter(a => a.label === senderRealName)[0] !== undefined;
       if (isTeam) {
-
+        console.log('Yay')
       }
     }
+    console.log(senderRealName, receiverRealName)
   });
-  Slack.channelInfo(channel, (channelInfo) => {
-    console.log(channelInfo);
-  })
 }
 
 export function listSevArtworks(): SevArtwork[] {

@@ -36,9 +36,23 @@ export function channelInfo(channelId: string, callback: (data: any) => void): v
   });
 }
 
-export function userInfo(userId: string, callback: (data: SlackUser) => void): void {
+function parseSlackUser(d: any): SlackUser {
+  return {
+    id: d['id'],
+    name: d['name'],
+    realName: d['real_name'],
+    displayName: d['profile']['real_name'],
+    email: d['profile']['email'],
+  }
+}
+
+export function allUserNameById(callback: (data: {[id: string]: string}) => void): void {
   apiCall('users.list', {token: TOKEN}, usersList => {
-    callback(usersList['members'].filter(u => u.id === userId)[0]);
+    const usersByName = {};
+    for (let user of usersList['members']) {
+      usersByName[user['id']] = user['real_name'];
+    }
+    callback(usersByName);
   });
 }
 

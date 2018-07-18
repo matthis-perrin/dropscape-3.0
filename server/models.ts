@@ -11,7 +11,7 @@ export interface SlackUser {
   realName: string;
   displayName: string;
   email: string;
-  imId: string;
+  imId?: string;
 }
 
 export enum VideoStatus {
