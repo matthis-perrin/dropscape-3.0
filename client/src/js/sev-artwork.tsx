@@ -19,6 +19,9 @@ export class SevArtwork extends React.Component<SevArtworkProps, {}> {
   public static displayName = 'SevArtwork';
 
   public render(): JSX.Element {
+    if (!this.props.sevArtwork) {
+      return <React.Fragment />;
+    }
     return (
       <div className={`sev-artwork-wrapper sev-artwork-wrapper--${this.props.size}`}>
         <div className={`bg-${this.props.sevArtwork.name} sev-artwork`}></div>
