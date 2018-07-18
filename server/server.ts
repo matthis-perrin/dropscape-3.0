@@ -63,7 +63,7 @@ app.post('/slack', (req, res) => {
   res.send();
 })
 
-app.post('/slack/oauth', (req, res) => res.send())
+app.get('/slack/oauth', (req, res) => res.send())
 
 app.listen(PORT, HOST, () => console.log(`Dropscape 3.0 app listening on ${HOST}:${PORT}!`));
 

@@ -1,7 +1,7 @@
 import * as request from 'request';
 import { SlackUser, SlackAccount } from './models';
 
-const TOKEN = 'xoxp-399994521443-401163813303-400441254290-51e20f12d5160b74aef0654ee4124fe3';
+const TOKEN = 'xoxp-399994521443-401163813303-400581310869-36e84e6a367b54da6eaebb15be78f87e';
 
 function apiCall(method: string, params: {[key: string]: string | boolean}, callback: (res: any) => void, retryOnFail: boolean = true): void {
   request.post({
