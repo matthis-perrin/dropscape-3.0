@@ -122,3 +122,7 @@ import * as Slack from './slack';
 //   const RustyMinkAccount = puzzleAccounts.RustyMink;
 //   Slack.sendMessage('Hi Whistling Hummingbird, this is Rusty Mink :)', RustyMinkAccount, WhistlingHummingbirdUser);
 // });
+
+Slack.channelInfo('C1234567890', (res) => {
+  console.log(res);
+})

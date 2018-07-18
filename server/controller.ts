@@ -112,9 +112,12 @@ export function handleSlackMessage(userId: string, text: string, channel: string
     if (user && user.realName) {
       const isTeam = listSevArtworks().filter(a => a.label === user.realName)[0] !== undefined;
       if (isTeam) {
-        
+
       }
     }
+  });
+  Slack.channelInfo(channel, (channelInfo) => {
+    console.log(channelInfo);
   })
 }
 

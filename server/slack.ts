@@ -1,7 +1,7 @@
 import * as request from 'request';
 import { SlackUser, SlackAccount } from './models';
 
-const TOKEN = 'xoxp-399994521443-401163813303-401700386486-61b944815bef0d6e569e97723db93889';
+const TOKEN = 'xoxp-399994521443-401163813303-401440247143-52fac60d9a73f9e51536292caba748da';
 
 function apiCall(method: string, params: {[key: string]: string | boolean}, callback: (res: any) => void, retryOnFail: boolean = true): void {
   request.post({
@@ -31,8 +31,8 @@ function apiCall(method: string, params: {[key: string]: string | boolean}, call
 }
 
 export function channelInfo(channelId: string, callback: (data: any) => void): void {
-  apiCall('im.list', {token: TOKEN}, imList => {
-    callback(imList['ims'].filter(im => im.id === channelId)[0]);
+  apiCall('channels.info', {token: TOKEN, channel: channelId}, channelRes => {
+    callback(channelRes['channel']);
   });
 }
 
