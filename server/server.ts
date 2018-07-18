@@ -120,5 +120,5 @@ import * as Slack from './slack';
 // Slack.listUsers(users => {
 //   const WhistlingHummingbirdUser = users.filter(u => u.realName === puzzleAccounts.WhistlingHummingbird.label)[0];
 //   const RustyMinkAccount = puzzleAccounts.RustyMink;
-//   Slack.sendMessage('Hi Whistling Hummingbird, this is Rusty Mink :)', RustyMinkAccount, WhistlingHummingbirdUser);
+//   Slack.sendMessage('Hi Whistling Hummingbird, this is Rusty Mink :)', RustyMinkAccount, WhistlingHummingbirdUser.id);
 // });

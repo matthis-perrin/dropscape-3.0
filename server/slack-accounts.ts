@@ -19,7 +19,7 @@ function makeAccountFromName(data: string[]): SlackAccount {
   }
 }
 
-export const adminAccount = makeAccountFromName(['bad-raccoon', 'xoxp-399994521443-401163813303-400581310869-36e84e6a367b54da6eaebb15be78f87e'])
+export const adminAccount = makeAccountFromName(['bad-raccoon', 'xoxp-399994521443-401163813303-399899994289-205fe9dab1949e8f9cfe2986fdca172c'])
 
 export const decoyAccounts = [
 ].map(makeAccountFromName);
