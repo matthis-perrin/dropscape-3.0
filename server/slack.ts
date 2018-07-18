@@ -1,7 +1,7 @@
 import * as request from 'request';
 import { SlackUser, SlackAccount } from './models';
 
-const TOKEN = 'xoxp-399994521443-401163813303-399553232208-c0b1d298ef623f68d664a14924c310e1';
+const TOKEN = 'xoxp-399994521443-401163813303-401700386486-61b944815bef0d6e569e97723db93889';
 
 function apiCall(method: string, params: {[key: string]: string | boolean}, callback: (res: any) => void, retryOnFail: boolean = true): void {
   request.post({
@@ -33,6 +33,12 @@ function apiCall(method: string, params: {[key: string]: string | boolean}, call
 export function channelInfo(channelId: string, callback: (data: any) => void): void {
   apiCall('im.list', {token: TOKEN}, imList => {
     callback(imList['ims'].filter(im => im.id === channelId)[0]);
+  });
+}
+
+export function userInfo(userId: string, callback: (data: any) => void): void {
+  apiCall('users.list', {token: TOKEN}, usersList => {
+    callback(usersList['members'].filter(u => u.id === userId)[0]);
   });
 }
 
@@ -72,6 +78,8 @@ export function fetchAccessToken(account: SlackAccount): void {
 }
 
 export function sendMessage(text: string, fromAccount: SlackAccount, toUser: SlackUser): void {
+  console.log(fromAccount)
+  console.log(toUser)
   apiCall('im.open', {
     token: fromAccount.apiToken,
     user: toUser.id,
@@ -84,6 +92,6 @@ export function sendMessage(text: string, fromAccount: SlackAccount, toUser: Sla
       as_user: true,
     }, (res) => {
       console.log(res);
-    })
-  })
+    }, false)
+  }, false)
 }

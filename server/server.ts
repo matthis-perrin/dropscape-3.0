@@ -1,7 +1,7 @@
 import * as express from 'express';
 import * as controller from './controller';
 
-const PORT = 3000;
+const PORT = 80;
 const HOST = '0.0.0.0';
 
 
@@ -67,8 +67,8 @@ app.post('/slack/oauth', (req, res) => res.send())
 
 app.listen(PORT, HOST, () => console.log(`Dropscape 3.0 app listening on ${HOST}:${PORT}!`));
 
-// import {adminAccount, puzzleAccounts} from './slack-accounts';
-// import * as Slack from './slack';
+import {adminAccount, puzzleAccounts} from './slack-accounts';
+import * as Slack from './slack';
 
 // function loadUsers(users: string[], callback: () => void): void {
 //   if (users.length === 0) {
@@ -111,7 +111,6 @@ app.listen(PORT, HOST, () => console.log(`Dropscape 3.0 app listening on ${HOST}
 //   team_name: 'Dropscape 3.0',
 //   team_id: 'TBRV8FBD1' }
 
-//https://dropscape3.slack.com/?redir=%2Foauth%3Fclient_id%3D399994521443.399534455952%26redirect_uri%3Dhttp%3A%2F%2F18.222.203.244%2Fslack%2Foauth%26scope%3Dim%253Aread%252Cim%253Ahistory%252Cchat%253Awrite%253Auser%252Cim%253Awrite
 
 // Slack.fetchAccessToken(puzzleAccounts.SwampCorgi)
 // Slack.fetchAccessToken(puzzleAccounts.RustyMink)
@@ -119,7 +118,7 @@ app.listen(PORT, HOST, () => console.log(`Dropscape 3.0 app listening on ${HOST}
 // Slack.fetchAccessToken(adminAccount)
 
 // Slack.listUsers(users => {
-//   const WhistlingHummingbirdUser = users.filter(u => u.email === puzzleAccounts.WhistlingHummingbird.email)[0];
+//   const WhistlingHummingbirdUser = users.filter(u => u.realName === puzzleAccounts.WhistlingHummingbird.label)[0];
 //   const RustyMinkAccount = puzzleAccounts.RustyMink;
 //   Slack.sendMessage('Hi Whistling Hummingbird, this is Rusty Mink :)', RustyMinkAccount, WhistlingHummingbirdUser);
 // });

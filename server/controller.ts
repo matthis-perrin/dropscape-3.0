@@ -108,7 +108,9 @@ export function listTeams(): Team[] {
 
 export function handleSlackMessage(userId: string, text: string, channel: string): void {
   console.log(userId, text, channel)
-  Slack.channelInfo(channel, (info) => console.log(info));
+  Slack.userInfo(userId, (data) => {
+    console.log(data);
+  })
 }
 
 export function listSevArtworks(): SevArtwork[] {
