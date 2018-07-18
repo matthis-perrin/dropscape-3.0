@@ -3,6 +3,9 @@ import * as ReactDOM from 'react-dom';
 import Admin from './admin';
 import Client from './client';
 
+console.error = function (...args: any[]): void {
+  alert(JSON.stringify(args));
+}
 
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
