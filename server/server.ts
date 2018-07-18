@@ -58,7 +58,7 @@ app.post('/slack', (req, res) => {
     res.send(req.body.challenge)
   }
   if (req.body.event && req.body.event.type === 'message') {
-    controller.handleSlackMessage(req.body.event.user, req.body.event.text, req.body.event.authedUsers);
+    controller.handleSlackMessage(req.body.event.user, req.body.event.text, req.body.event['authed_users']);
   }
   res.send();
 })
